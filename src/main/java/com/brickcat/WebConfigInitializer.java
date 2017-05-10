@@ -1,5 +1,7 @@
 package com.brickcat;
 
+import com.brickcat.config.RootConfig;
+import com.brickcat.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -8,12 +10,12 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebConfigInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{RootConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        return new Class[]{WebConfig.class};
     }
 
     //将DispatcherServlet 映射到“/”
